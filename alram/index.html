@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alarm</title>
+  <script>
+    function setAlarm() {
+      var alarmTime = document.getElementById("alarmTime").value;
+      var currentTime = new Date().toLocaleTimeString();
+      
+      if (alarmTime === currentTime) {
+        alert("Time to wake up!");
+      } else {
+        setTimeout(setAlarm, 1000); // Check every second
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Set Alarm</h2>
+  <label for="alarmTime">Enter alarm time:</label>
+  <input type="time" id="alarmTime">
+  <button onclick="setAlarm()">Set Alarm</button>
+</body>
+</html>
